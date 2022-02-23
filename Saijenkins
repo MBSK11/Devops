@@ -12,4 +12,7 @@ node{
         deploy adapters: [tomcat7(credentialsId: 'tomcat', path: '', url: 'http://10.9.8.9:8080')], contextPath: '/mbsk1', war: '**/*.war'
         
     }
+    stage('slack'){
+        slackSend baseUrl: 'https://hooks.slack.com/services/', channel: 'jenkins-notifications', color: 'Good', message: 'Job sucessfull', tokenCredentialId: 'slack', username: 'Devops'
+    }
 }
