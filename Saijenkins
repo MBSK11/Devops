@@ -9,7 +9,7 @@ node{
         sh "mv target/*.war target/myweb.war"
     }
     stage('Deploy'){
-        deploy adapters: [tomcat7(credentialsId: 'tomcat', path: '', url: 'http://10.9.8.9:8080')], contextPath: '/mbsk', war: '**/*.war'
+        deploy adapters: [tomcat7(credentialsId: 'tomcat', path: '', url: 'http://10.9.8.9:8080')], contextPath: '/mbsk1', war: '**/*.war'
         
     }
 }
